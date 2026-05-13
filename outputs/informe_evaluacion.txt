@@ -1,0 +1,31 @@
+=================================================================
+  INFORME FASE 5 CRISP-DM – EVALUACIÓN
+  Análisis Agua Potable RD | Noel Reyes 21-2021 | UNPHU 2026
+=================================================================
+
+M1 Regresión Lineal : R²=0.0146  RMSE=19.0657  MAE=6.6420
+M2 Random Forest    : R²=0.1632  RMSE=17.5695  MAE=6.1410
+M3 K-Means (K=3)    : ['RIESGO ALTO', 'RIESGO MEDIO', 'RIESGO BAJO']
+M4 Árbol Decisión   : Accuracy=0.5862  F1-macro=0.3546
+
+CV K-Fold (k=10):
+  M1 R²: -0.4877 ± 1.0150
+  M2 R²: -0.4754 ± 1.1352
+
+OBJETIVOS:
+  OBJ-1: [FALLO] Predecir IP con R² > 0.70
+  → Mejor R²=0.1632
+  OBJ-2: [FALLO] RMSE de predicción IP < 5.0%
+  → Mejor RMSE=17.5695%
+  OBJ-3: [OK] Cumplimiento norma OMS Cloro > 70%
+  → 99.1% dentro de norma OMS (0.2–5.0 mg/L)
+  OBJ-4: [OK] Segmentar en 3 niveles de riesgo (K-Means)
+  → Niveles: ['RIESGO ALTO', 'RIESGO MEDIO', 'RIESGO BAJO']
+  OBJ-5: [FALLO] Clasificar alertas Accuracy > 0.70
+  → Accuracy=0.5862  F1-macro=0.3546
+  OBJ-6: [OK] IP promedio histórica ≥ 95%
+  → IP global = 96.56%
+  OBJ-7: [OK] Más del 80% de registros en NORMAL
+  → 89.4% en estado NORMAL
+
+Éxito: 4/7 (57%)
